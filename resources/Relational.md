@@ -16,9 +16,3 @@
 
 - Planets: *Id*, Name, Position, SolarSystem, MetalMineLvl, MetalCapacity, CristalMineLvl, CristalCapacity, DeuteriumMineLvl, DeuteriumCapacity, UserId
     on UserId ref Users
-
-- Defences: *Id*, Quantity, DefencesTypeId, PlanetId
-    on DefencesTypeuId ref DefencesType
-    on PlanetId ref Planet
-
-- DefencesType: *Id*, Name, AttackPoints, Armour, ConstructTime
