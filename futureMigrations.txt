@@ -1,0 +1,9 @@
+ShipTypes:
+$table->increments('id');
+$table->string('name')->unique();
+$table->integer('armour')->unsigned();
+$table->integer('attack_points')->unsigned();
+$table->integer('speed')->unsigned();
+$table->integer('capacity')->unsigned();
+$table->integer('construct_time')->unsigned();
+$table->timestamps();
