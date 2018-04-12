@@ -1,24 +1,12 @@
 ship_types:
 $table->increments('id');
 $table->string('name')->unique();
-$table->integer('armour')->unsigned();
+$table->integer('hp')->unsigned();
+$table->integer('armor')->unsigned();
 $table->integer('attack_points')->unsigned();
 $table->integer('speed')->unsigned();
 $table->integer('capacity')->unsigned();
 $table->integer('construct_time')->unsigned();
-$table->timestamps();
-
-travels:
-$table->increments('id');
-$table->integer('origin_planet_id')->unsigned();
-$table->integer('destination_planet_id')->unsigned();
-$table->dateTime('start_date');
-$table->dateTime('end_date');
-$table->enum('travel_type', ['attack', 'spy', 'transport', 'colonize', 'deploy']);
-$table->integer('fleet_id')->unsigned()->nullable();
-$table->foreign('fleet_id')->references('id')->on('fleets')->onDelete('set null');
-$table->foreign('origin_planet_id')->references('id')->on('planets');
-$table->foreign('destination_planet_id')->references('id')->on('planets');
 $table->timestamps();
 
 fleets:
@@ -51,4 +39,49 @@ $table->integer('deuterium_mine_lvl')->unsigned()->default(0);
 $table->integer('deuterium_capacity')->unsigned()->default(10.000);
 $table->integer('user_id')->unsigned()->nullable()->default(null);
 $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+$table->timestamps();
+
+travels:
+$table->increments('id');
+$table->integer('origin_planet_id')->unsigned();
+$table->integer('destination_planet_id')->unsigned();
+$table->dateTime('start_date');
+$table->dateTime('end_date');
+$table->enum('travel_type', ['attack', 'spy', 'transport', 'colonize', 'deploy']);
+$table->integer('fleet_id')->unsigned()->nullable();
+$table->foreign('fleet_id')->references('id')->on('fleets')->onDelete('set null');
+$table->foreign('origin_planet_id')->references('id')->on('planets');
+$table->foreign('destination_planet_id')->references('id')->on('planets');
+$table->timestamps();
+
+resources:
+$table->increments('id');
+$table->string('name');
+$table->timestamps();
+
+planet_resources:
+$table->integer('planet_id')->unsigned();
+$table->integer('resource_id')->unsigned();
+$table->primary(array('planet_id', 'resource_id'));
+$table->integer('quantity')->unsigned();
+$table->foreign('planet_id')->references('id')->on('planets');
+$table->foreign('resource_id')->references('id')->on('resources');
+$table->timestamps();
+
+fleet_resources:
+$table->integer('fleet_id')->unsigned();
+$table->integer('resource_id')->unsigned();
+$table->primary(array('fleet_id', 'resource_id'));
+$table->integer('quantity')->unsigned();
+$table->foreign('fleet_id')->references('id')->on('fleets');
+$table->foreign('resource_id')->references('id')->on('resources');
+$table->timestamps();
+
+ship_type_resources:
+$table->integer('ship_type_id')->unsigned();
+$table->integer('resource_id')->unsigned();
+$table->primary(array('ship_type_id', 'resource_id'));
+$table->integer('quantity')->unsigned();
+$table->foreign('ship_type_id')->references('id')->on('ship_types');
+$table->foreign('resource_id')->references('id')->on('resources');
 $table->timestamps();
