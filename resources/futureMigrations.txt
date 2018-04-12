@@ -1,0 +1,39 @@
+ship_types:
+$table->increments('id');
+$table->string('name')->unique();
+$table->integer('armour')->unsigned();
+$table->integer('attack_points')->unsigned();
+$table->integer('speed')->unsigned();
+$table->integer('capacity')->unsigned();
+$table->integer('construct_time')->unsigned();
+$table->timestamps();
+
+travels:
+$table->increments('id');
+$table->integer('origin_planet_id')->unsigned();
+$table->integer('destination_planet_id')->unsigned();
+$table->dateTime('start_date');
+$table->dateTime('end_date');
+$table->enum('travel_type', ['attack', 'spy', 'transport', 'colonize', 'deploy']);
+$table->integer('fleet_id')->unsigned()->nullable();
+$table->foreign('fleet_id')->references('id')->on('fleets')->onDelete('set null');
+$table->foreign('origin_planet_id')->references('id')->on('planets');
+$table->foreign('destination_planet_id')->references('id')->on('planets');
+$table->timestamps();
+
+fleets:
+$table->increments('id');
+$table->integer('user_id')->unsigned();
+$table->integer('planet_id')->unsigned()->nullable()->default(null);
+$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+$table->foreign('planet_id')->references('id')->on('planets')->onDelete('no action');
+$table->timestamps();
+
+fleet_lines:
+$table->integer('ship_type_id')->unsigned();
+$table->integer('fleet_id')->unsigned();
+$table->primary(array('ship_type_id', 'fleet_id'));
+$table->integer('quantity')->unsigned()->default(1);
+$table->foreign('fleet_id')->references('id')->on('fleets')->onDelete('cascade');
+$table->foreign('ship_type_id')->references('id')->on('ship_types');
+$table->timestamps();

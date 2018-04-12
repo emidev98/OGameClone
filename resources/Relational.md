@@ -4,7 +4,7 @@
     on userId ref Users
     on planetId ref Planet
 
-- FleetLine: *Id*, Quantity, FleetId, ShipTypeId
+- FleetLine: *FleetId, ShipTypeId*, Quantity
     on FleetId ref Fleet
     on ShipTypeId ref ShipType
 
