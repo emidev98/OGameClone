@@ -19,11 +19,11 @@ class CreatePlanetsTable extends Migration
           $table->integer('position')->unsigned();
           $table->integer('solar_system')->unsigned();
           $table->integer('metal_mine_lvl')->unsigned()->default(0);
-          $table->integer('metal_capacity')->unsigned()->default(10.000);
+          $table->integer('metal_capacity')->unsigned()->default(10000);
           $table->integer('crystal_mine_lvl')->unsigned()->default(0);
-          $table->integer('crystal_capacity')->unsigned()->default(10.000);
+          $table->integer('crystal_capacity')->unsigned()->default(10000);
           $table->integer('deuterium_mine_lvl')->unsigned()->default(0);
-          $table->integer('deuterium_capacity')->unsigned()->default(10.000);
+          $table->integer('deuterium_capacity')->unsigned()->default(10000);
           $table->integer('user_id')->unsigned()->nullable()->default(null);
           $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
           $table->timestamps();
