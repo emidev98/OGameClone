@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ShipTypesSeeder extends Seeder
+class ShipTypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,6 +19,8 @@ class ShipTypesSeeder extends Seeder
           'speed' => 0.5,
           'construct_time' => 0,
           'hp' => 6000,
+          'created_at' => NOW(),
+          'updated_at' => NOW(),
       ]);
       DB::table('ship_types')->insert([
           'name' => 'Cazador pesado',
@@ -28,6 +30,8 @@ class ShipTypesSeeder extends Seeder
           'speed' => 0.8,
           'construct_time' => 0,
           'hp' => 15000,
+          'created_at' => NOW(),
+          'updated_at' => NOW(),
       ]);
       DB::table('ship_types')->insert([
           'name' => 'Crucero',
@@ -37,6 +41,8 @@ class ShipTypesSeeder extends Seeder
           'speed' => 0.4,
           'construct_time' => 0,
           'hp' => 39000,
+          'created_at' => NOW(),
+          'updated_at' => NOW(),
       ]);
     }
 }
