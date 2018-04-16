@@ -71,7 +71,6 @@
             </div>
         </nav>
         @yield('content')
-        {{phpinfo()}}
     </div>
 
     <!-- Scripts -->
