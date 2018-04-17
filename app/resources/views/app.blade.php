@@ -21,6 +21,32 @@
                 <a class="brand-logo" href="{{ url('/') }}">
                     {{ config('app.name', 'UGame') }}
                 </a>
+                @auth
+                    <div class="brand-logo center materials">
+                        <div class="metal">
+                            <div class="description">
+                                <span class="name">Metal</span>
+                                <span class="status">(No Data)</span>
+                            </div>
+                            <img src="{{ asset('img/minerals/metal.png') }}">
+                        </div>
+                        <div class="deuterium">
+                            <div class="description">
+                                <span class="name">Deuterium</span>
+                                <span class="status">(No Data)</span>
+                            </div>
+                            <img src="{{ asset('img/minerals/deuterium.png') }}">
+                        </div>
+                        <div class="crystal">
+                            <div class="description">
+                                <span class="name">Crystal</span>
+                                <span class="status">(No Data)</span>
+                            </div>
+                            <img src="{{ asset('img/minerals/crystal.png') }}">
+                        </div>
+                    </div>
+                @endauth
+
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     @guest
                         <li><a href="{{ route('login') }}">Login</a></li>
@@ -41,6 +67,12 @@
                 </ul>
             </div>
         </nav>
+        <!-- <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{ route('travels')}}">Travels</a></li>
+            <li><a href="{{ route('hangar')}}">Hangar</a></li>
+            <li><a href="{{ route('fleets')}}">Fleet</a></li>
+            <li><a href="{{ route('resources')}}">Resources</a></li>
+        </ul> -->
         @yield('content')
     </div>
 

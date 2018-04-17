@@ -15,7 +15,10 @@ Route::get('/', 'AppController@index')->name('app');
 
 Auth::routes();
 
-Route::get('/travel', 'TravelsController@index')->name('travels');
+Route::get('/travels', 'TravelsController@index')->name('travels');
+Route::get('/hangar')->name('hangar');
+Route::get('/fleets')->name('fleets');
+Route::get('/resources')->name('resources');
 
 Route::get('/travel/view/{planet}', 'TravelsController@handleView')->name('travels-show');
 
