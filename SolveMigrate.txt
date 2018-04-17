@@ -1,2 +1,0 @@
-Per arreglar la llargada de la string anar a vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php
-Canviar: public static $defaultStringLength = 191;
