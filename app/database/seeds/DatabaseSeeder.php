@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PlanetsTableSeeder::class);
         $this->call(ShipTypesTableSeeder::class);
+        $this->call(ResourcesTableSeeder::class);
     }
 }
