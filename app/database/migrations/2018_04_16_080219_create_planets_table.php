@@ -15,9 +15,10 @@ class CreatePlanetsTable extends Migration
     {
         Schema::create('planets', function (Blueprint $table) {
           $table->increments('id');
-          //$table->string('name')->unique();
+          $table->string('name')->default("");
           $table->integer('position')->unsigned();
           $table->integer('solar_system')->unsigned();
+          $table->unique(array('position', 'solar_system'));
           $table->integer('metal_mine_lvl')->unsigned()->default(0);
           $table->integer('metal_capacity')->unsigned()->default(10000);
           $table->integer('crystal_mine_lvl')->unsigned()->default(0);
