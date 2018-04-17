@@ -1,0 +1,21 @@
+/* Navbar */
+
+nav {
+    margin-bottom: 2em;
+
+}
+
+nav .nav-wrapper .brand-logo{
+    margin-left: 1em;
+
+}
+
+nav .nav-wrapper .logout{
+    display: flex;
+
+}
+
+nav .nav-wrapper .logout .material-icons{
+    margin-left: 0.5em;
+
+}
