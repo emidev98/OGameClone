@@ -15,5 +15,8 @@
 .card{
     margin: auto;
     padding: 1em;
-    
+
 }
+.inner-content {
+   margin-top: 2em;
+ }
