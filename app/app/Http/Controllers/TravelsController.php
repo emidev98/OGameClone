@@ -33,5 +33,6 @@ class TravelsController extends Controller
      $travel->travel_type = 'attack';
      $travel->fleet_id = null;
      $travel->save();
+     return view('home');
   }
 }
