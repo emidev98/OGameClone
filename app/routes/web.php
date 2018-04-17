@@ -15,8 +15,6 @@ Route::get('/', 'AppController@index')->name('app');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/travel', 'TravelsController@index')->name('travels');
 
 Route::get('/travel/view/{planet}', 'TravelsController@handleView')->name('travels-show');
