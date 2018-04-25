@@ -1,22 +1,27 @@
 @extends('app')
 
 @section('content')
-<div id="home" class="container card">
+  <div id="home" class="container card">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-                    <ul>
-                      <li><a href="{{route('travels')}}">Travels</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
+      <h5 class="col l12 center-align">Select a planet to manage it!</h5>
     </div>
-</div>
-<div class="inner-content container card">
-  @yield('inner-content')
-</div>
+    <div class="planet-properties-title">
+      <p>Name</p>
+      <p>Solar System</p>
+      <p>Position</p>
+    </div>
+    <ul>
+      @foreach ($userPlanets as $planet)
+        <li>
+          <a href="{{route('home-view', $planet)}}">
+            <div class="planet-properties">
+              <span class="planet-property">{{$planet->name}}</span>
+              <span class="planet-property">{{$planet->solar_system}}</span>
+              <span class="planet-property">{{$planet->position}}</span>
+            </div>
+          </a>
+        </li>
+      @endforeach
+    </ul>
+  </div>
 @endsection

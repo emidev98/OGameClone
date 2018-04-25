@@ -21,10 +21,6 @@ class TravelsController extends Controller
       return view('travels.travels',  ["planets" => Planet::all()]);
   }
 
-  public function handleView(Planet $planet){
-    return view('travels.show',  ["planet" => $planet]);;
-  }
-
   public function createTravel(Planet $planet){
     /*DB::table('travels')->insert([
            'origin_planet_id' => Auth::user()->planets[0]->id,

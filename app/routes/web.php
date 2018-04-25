@@ -17,8 +17,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/home/view/{planet}', 'HomeController@handleView')->name('home-view');
+
 Route::get('/travel', 'TravelsController@index')->name('travels');
 
-Route::get('/travel/view/{planet}', 'TravelsController@handleView')->name('travels-show');
+
 
 Route::get('/home/{planet}', 'TravelsController@createTravel')->name('make-travel');

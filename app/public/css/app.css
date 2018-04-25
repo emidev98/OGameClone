@@ -19,4 +19,21 @@
 }
 .inner-content {
    margin-top: 2em;
- }
+}
+#home .planet-properties-title {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  justify-items: center;
+}
+
+#home .planet-properties {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  justify-items: center;
+  background-color: #e6e6e6;
+}
+
+#home .planet-properties:hover {
+  background-color: #808080;
+  color: white;
+}
