@@ -1,15 +1,15 @@
 #home{
-    
+
 }
 
 #home h4{
     text-align: center;
-    margin: 0.5em 0;
+    margin: 0.5rem 0 1rem 0;
 
 }
 
 #home .data{
-    height: calc(100% - 5em);
+    height: calc(100% - 4em);
     overflow-y: auto;
 
 }
