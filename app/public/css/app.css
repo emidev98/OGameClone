@@ -2,6 +2,9 @@
 @import url(./navbar.css);
 @import url(./home.css);
 
+@import url(./login.css);
+@import url(./register.css);
+
 *{
     font-family: "Raleway";
 
@@ -19,8 +22,13 @@
 
 }
 
-.container.card{
+#app .container.card{
     overflow-y: auto;
+    height: calc( 100vh - 4em - 64px);
+
+}
+
+#app.auth .container.card{
     height: calc( 100vh - 4em - 96px);
 
 }

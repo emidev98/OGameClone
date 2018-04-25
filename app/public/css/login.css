@@ -1,0 +1,24 @@
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#login h3{
+    margin: 0;
+    
+}
+
+#login form{
+    width: calc(100% - 4em);
+
+}
+
+#login .buttons-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+
+}

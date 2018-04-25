@@ -39,7 +39,7 @@
                         href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                            {{ Auth::user()->name }} Logout <i class="material-icons">redo</i>
+                            {{ Auth::user()->name }} Logout <i class="material-icons">clear</i>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
@@ -48,12 +48,16 @@
             @endguest
         </ul>
     </div>
-    <div class="nav-content light-blue darken-3">
-        <div class="center">
-            <div><a href="{{ route('travels')}}">Travels</a></div>
-            <div><a href="{{ route('hangar')}}">Hangar</a></div>
-            <div><a href="{{ route('fleet')}}">Fleet</a></div>
-            <div><a href="{{ route('resources')}}">Resources</a></div>
+
+    @auth
+        <div class="nav-content light-blue darken-3">
+            <div class="center">
+                <div><a href="{{ route('travels')}}">Travels</a></div>
+                <div><a href="{{ route('hangar')}}">Hangar</a></div>
+                <div><a href="{{ route('fleet')}}">Fleet</a></div>
+                <div><a href="{{ route('resources')}}">Resources</a></div>
+            </div>
         </div>
-    </div>
+    @endauth
+
 </nav>
