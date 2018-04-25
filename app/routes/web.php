@@ -16,8 +16,8 @@ Route::get('/', 'AppController@index')->name('app');
 Auth::routes();
 
 Route::get('/travels', 'TravelsController@index')->name('travels');
-Route::get('/hangar')->name('hangar');
-Route::get('/fleets')->name('fleets');
-Route::get('/resources')->name('resources');
+Route::get('/hangar', 'HangarController@index')->name('hangar');
+Route::get('/fleet', 'FleetController@index')->name('fleet');
+Route::get('/resources', 'ResourcesController@index')->name('resources');
 Route::get('/planet/{planet}', 'AppController@handleHomeView')->name('planet');
 //Route::get('/home/{planet}', 'TravelsController@createTravel')->name('make-travel');

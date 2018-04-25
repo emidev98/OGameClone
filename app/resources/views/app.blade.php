@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="light-blue darken-3">
+        <nav class="nav-extended light-blue darken-3">
             <div class="nav-wrapper">
                 <a class="brand-logo" href="{{ url('/') }}">
                     {{ config('app.name', 'UGame') }}
@@ -67,13 +67,15 @@
                     @endguest
                 </ul>
             </div>
+            <div class="nav-content light-blue darken-3">
+                <div class="center">
+                    <div><a href="{{ route('travels')}}">Travels</a></div>
+                    <div><a href="{{ route('hangar')}}">Hangar</a></div>
+                    <div><a href="{{ route('fleet')}}">Fleet</a></div>
+                    <div><a href="{{ route('resources')}}">Resources</a></div>
+                </div>
+            </div>
         </nav>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{{ route('travels')}}">Travels</a></li>
-            <li><a href="{{ route('hangar')}}">Hangar</a></li>
-            <li><a href="{{ route('fleets')}}">Fleet</a></li>
-            <li><a href="{{ route('resources')}}">Resources</a></li>
-        </ul>
         @yield('content')
     </div>
 
