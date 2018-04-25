@@ -16,6 +16,10 @@ class Planet extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function fleet() {
+      return $this->hasOne('App\Fleet');
+    }
+
     public static function createNewSolarSystem(int $newSolarSystem){
       for($i = 1; $i<=15; $i++){
         Planet::create([
