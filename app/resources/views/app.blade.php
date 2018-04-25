@@ -67,12 +67,12 @@
                 </ul>
             </div>
         </nav>
-        <!-- <ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav" id="mobile-demo">
             <li><a href="{{ route('travels')}}">Travels</a></li>
             <li><a href="{{ route('hangar')}}">Hangar</a></li>
             <li><a href="{{ route('fleets')}}">Fleet</a></li>
             <li><a href="{{ route('resources')}}">Resources</a></li>
-        </ul> -->
+        </ul>
         @yield('content')
     </div>
 

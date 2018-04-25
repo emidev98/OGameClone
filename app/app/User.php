@@ -31,4 +31,8 @@ class User extends Authenticatable
       return $this->hasMany('App\Planet');
     }
 
+    public function fleets(){
+      return $this->hasMany('App\Fleet');
+    }
+
 }

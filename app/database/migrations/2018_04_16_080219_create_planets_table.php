@@ -15,7 +15,7 @@ class CreatePlanetsTable extends Migration
     {
         Schema::create('planets', function (Blueprint $table) {
           $table->increments('id');
-          $table->string('name')->default("");
+          $table->string('name')->default("unnamed");
           $table->integer('position')->unsigned();
           $table->integer('solar_system')->unsigned();
           $table->unique(array('position', 'solar_system'));
@@ -25,6 +25,7 @@ class CreatePlanetsTable extends Migration
           $table->integer('crystal_capacity')->unsigned()->default(10000);
           $table->integer('deuterium_mine_lvl')->unsigned()->default(0);
           $table->integer('deuterium_capacity')->unsigned()->default(10000);
+          $table->boolean('hasHangar')->default(false);
           $table->integer('user_id')->unsigned()->nullable()->default(null);
           $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
           $table->timestamps();

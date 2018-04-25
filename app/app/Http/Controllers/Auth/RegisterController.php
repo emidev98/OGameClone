@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Planet;
+use App\Fleet;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,8 +29,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    protected $redirectTo = '/';
+    //antes habia: protected $redirectTo = '/home';
     /**
      * Create a new controller instance.
      *
@@ -69,6 +70,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        $newFleet = new Fleet;
+        $newFleet->planet()->associate($planetChoosed);
+        $newFleet->user()->associate($newUser);
+        $newFleet->save();
         $newUser->planets()->save($planetChoosed);
         return $newUser;
     }
