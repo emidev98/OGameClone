@@ -25,6 +25,7 @@
 #app .container.card{
     overflow-y: auto;
     height: calc( 100vh - 4em - 64px);
+    z-index: 10;
 
 }
 
