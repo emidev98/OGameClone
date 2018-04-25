@@ -1,27 +1,23 @@
 @extends('app')
 
 @section('content')
-  <div id="home" class="container card">
-    <div class="row">
-      <h5 class="col l12 center-align">Select a planet to manage it!</h5>
+    <div id="home" class="container card">
+        <h4>Select planet to manage...</h4>
+        <div class="data">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Solar System</th>
+                    <th>Position</th>
+                </tr>
+                @foreach ($userPlanets as $planet)
+                        <tr>
+                            <td><a href="{{route('home-view', $planet)}}">{{$planet->name}}</a></td>
+                            <td><a href="{{route('home-view', $planet)}}">{{$planet->solar_system}}</a></td>
+                            <td><a href="{{route('home-view', $planet)}}">{{$planet->position}}</a></td>
+                        </tr>
+                @endforeach
+            </table>
+        </div>
     </div>
-    <div class="planet-properties-title">
-      <p>Name</p>
-      <p>Solar System</p>
-      <p>Position</p>
-    </div>
-    <ul>
-      @foreach ($userPlanets as $planet)
-        <li>
-          <a href="{{route('home-view', $planet)}}">
-            <div class="planet-properties">
-              <span class="planet-property">{{$planet->name}}</span>
-              <span class="planet-property">{{$planet->solar_system}}</span>
-              <span class="planet-property">{{$planet->position}}</span>
-            </div>
-          </a>
-        </li>
-      @endforeach
-    </ul>
-  </div>
 @endsection

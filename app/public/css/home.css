@@ -1,0 +1,37 @@
+#home{
+    
+}
+
+#home h4{
+    text-align: center;
+    margin: 0.5em 0;
+
+}
+
+#home .data{
+    height: calc(100% - 5em);
+    overflow-y: auto;
+
+}
+
+#home table tr:nth-child(even) {
+    background-color: rgba(221, 221, 221, 0.25);
+
+}
+
+#home table tr td {
+    padding: 0;
+    border-radius: 0;
+
+}
+
+#home table tr:last-child {
+    border-bottom: 0;
+
+}
+
+#home table tr td a {
+    display: block;
+    padding: 0.5em;
+
+}

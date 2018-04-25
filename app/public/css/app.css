@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:600);
 @import url(./navbar.css);
+@import url(./home.css);
 
 *{
     font-family: "Raleway";
@@ -17,23 +18,9 @@
     padding: 1em;
 
 }
-.inner-content {
-   margin-top: 2em;
-}
-#home .planet-properties-title {
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  justify-items: center;
-}
 
-#home .planet-properties {
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
-  justify-items: center;
-  background-color: #e6e6e6;
-}
+.container.card{
+    overflow-y: auto;
+    height: calc( 100vh - 4em - 64px);
 
-#home .planet-properties:hover {
-  background-color: #808080;
-  color: white;
 }
