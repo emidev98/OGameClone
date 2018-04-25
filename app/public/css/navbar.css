@@ -1,9 +1,10 @@
-/* Navbar */
 
 nav {
     margin-bottom: 2em;
 
 }
+
+/* Navbar Wrapper */
 
 nav .nav-wrapper .brand-logo{
     margin-left: 1em;
@@ -13,7 +14,7 @@ nav .nav-wrapper .brand-logo{
 nav .nav-wrapper .materials{
     display: flex;
     margin: 0;
-    height: inherit;
+    height: 100%;
     align-items: center;
 }
 
@@ -32,7 +33,8 @@ nav .nav-wrapper .materials .description{
     display: flex;
     flex-direction: column;
     margin-right: .5em;
-
+    cursor: default;
+    
 }
 
 nav .nav-wrapper .materials .status{
@@ -54,5 +56,25 @@ nav .nav-wrapper .logout{
 
 nav .nav-wrapper .logout .material-icons{
     margin-left: 0.5em;
+
+}
+
+/* Navbar content */
+
+nav .nav-content{
+    display: flex;
+    justify-content: center;
+    height: 32px;
+
+}
+
+nav .nav-content .center{
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+nav .nav-content .center div{
+    margin: 0 1em;
 
 }

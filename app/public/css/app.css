@@ -21,6 +21,6 @@
 
 .container.card{
     overflow-y: auto;
-    height: calc( 100vh - 4em - 64px);
+    height: calc( 100vh - 4em - 96px);
 
 }
