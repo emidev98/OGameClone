@@ -34,7 +34,7 @@ class AppController extends Controller
 
     public function handleHomeView(Planet $planet){
         if (Auth::check())
-          return view('home.home-view',  ["planet" => $planet]);;
+          return view('planet.planet',  ["planet" => $planet]);;
 
         return redirect()->route("login");
     }

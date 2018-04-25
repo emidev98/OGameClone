@@ -12,9 +12,9 @@
                 </tr>
                 @foreach ($userPlanets as $planet)
                         <tr>
-                            <td><a href="{{route('home-view', $planet)}}">{{$planet->name}}</a></td>
-                            <td><a href="{{route('home-view', $planet)}}">{{$planet->solar_system}}</a></td>
-                            <td><a href="{{route('home-view', $planet)}}">{{$planet->position}}</a></td>
+                            <td><a href="{{route('planet', $planet)}}">{{$planet->name}}</a></td>
+                            <td><a href="{{route('planet', $planet)}}">{{$planet->solar_system}}</a></td>
+                            <td><a href="{{route('planet', $planet)}}">{{$planet->position}}</a></td>
                         </tr>
                 @endforeach
             </table>

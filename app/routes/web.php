@@ -19,5 +19,5 @@ Route::get('/travels', 'TravelsController@index')->name('travels');
 Route::get('/hangar')->name('hangar');
 Route::get('/fleets')->name('fleets');
 Route::get('/resources')->name('resources');
-Route::get('/view/{planet}', 'AppController@handleHomeView')->name('home-view');
+Route::get('/planet/{planet}', 'AppController@handleHomeView')->name('planet');
 //Route::get('/home/{planet}', 'TravelsController@createTravel')->name('make-travel');
