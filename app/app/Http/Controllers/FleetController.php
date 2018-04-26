@@ -12,11 +12,11 @@ class FleetController extends Controller
 
   public function __construct()
   {
-      
+
   }
 
-  public function index()
+  public function index(Planet $planet)
   {
-      return view('fleet.fleet');
+      return view('fleet.fleet', ["planet" => $planet]);
   }
 }

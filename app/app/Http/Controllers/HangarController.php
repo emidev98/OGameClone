@@ -15,8 +15,8 @@ class HangarController extends Controller
 
   }
 
-  public function index()
+  public function index(Planet $planet)
   {
-      return view('hangar.hangar');
+      return view('hangar.hangar', ["planet" => $planet]);
   }
 }

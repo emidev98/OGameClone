@@ -12,11 +12,11 @@ class ResourcesController extends Controller
 
   public function __construct()
   {
-      
+
   }
 
-  public function index()
+  public function index(Planet $planet)
   {
-      return view('resources.resources');
+      return view('resources.resources', ["planet" => $planet]);
   }
 }
