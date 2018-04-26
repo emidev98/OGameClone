@@ -1,0 +1,7 @@
+.solar_system_selector_container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.solar_system_selector {
+  display: inline;
+}

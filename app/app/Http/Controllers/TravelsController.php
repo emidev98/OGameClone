@@ -17,7 +17,7 @@ class TravelsController extends Controller
 
   public function index()
   {
-      return view('travels.travels',  ["planets" => Planet::all()]);
+      return view('travels.travels',  ["planets" => Planet::all(), "maxSolarSystem" => Planet::getLastSolarSystem()]);
   }
 
   public function createTravel(Planet $planet){
