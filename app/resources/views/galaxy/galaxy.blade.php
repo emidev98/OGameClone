@@ -20,7 +20,6 @@
       @foreach ($planets as $planet)
               <tr>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->name}}</a></td>
-                  <td><a href="{{route('planet', $planet)}}">{{$planet->solar_system}}</a></td>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->position}}</a></td>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->getNotNullUser()->name}}</a></td>
               </tr>
