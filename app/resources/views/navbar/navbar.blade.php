@@ -52,6 +52,7 @@
     @auth
         <div class="nav-content light-blue darken-3">
             <div class="center">
+                <div><a href="{{ route('home')}}">Home</a></div>
                 <div><a href="{{ route('galaxy')}}">Galaxy</a></div>
                 <div><a href="{{ route('hangar')}}">Hangar</a></div>
                 <div><a href="{{ route('fleet')}}">Fleet</a></div>
