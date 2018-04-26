@@ -15,7 +15,7 @@ Route::get('/', 'AppController@index')->name('app');
 
 Auth::routes();
 
-Route::get('/travels', 'TravelsController@index')->name('travels');
+Route::get('/galaxy', 'GalaxyController@index')->name('galaxy');
 Route::get('/hangar', 'HangarController@index')->name('hangar');
 Route::get('/fleet', 'FleetController@index')->name('fleet');
 Route::get('/resources', 'ResourcesController@index')->name('resources');
