@@ -20,6 +20,13 @@ class Planet extends Model
       return $this->hasOne('App\Fleet');
     }
 
+    public function getNotNullUser(){
+      $user = $this->user;
+      if ($user == null)
+        $user = new User();
+      return $user;
+    }
+
     public static function createNewSolarSystem(int $newSolarSystem){
       for($i = 1; $i<=15; $i++){
         Planet::create([
