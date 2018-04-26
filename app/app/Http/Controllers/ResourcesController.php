@@ -12,11 +12,11 @@ class ResourcesController extends Controller
 
   public function __construct()
   {
-      $this->middleware('auth');
+      
   }
 
   public function index()
   {
-      return view('resources.resources',  ["planets" => Planet::all()]);
+      return view('resources.resources');
   }
 }
