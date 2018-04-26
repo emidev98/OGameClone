@@ -52,10 +52,10 @@
     @auth
         <div class="nav-content light-blue darken-3">
             <div class="center">
-                <div><a href="{{ route('galaxy')}}">Galaxy</a></div>
-                <div><a href="{{ route('hangar')}}">Hangar</a></div>
-                <div><a href="{{ route('fleet')}}">Fleet</a></div>
-                <div><a href="{{ route('resources')}}">Resources</a></div>
+                <div><a href="{{ route('galaxy', $planet)}}">Galaxy</a></div>
+                <div><a href="{{ route('hangar', $planet)}}">Hangar</a></div>
+                <div><a href="{{ route('fleet', $planet)}}">Fleet</a></div>
+                <div><a href="{{ route('resources', $planet)}}">Resources</a></div>
             </div>
         </div>
     @endauth
