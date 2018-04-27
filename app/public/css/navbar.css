@@ -34,7 +34,7 @@ nav .nav-wrapper .materials .description{
     flex-direction: column;
     margin-right: .5em;
     cursor: default;
-    
+
 }
 
 nav .nav-wrapper .materials .status{
@@ -62,19 +62,17 @@ nav .nav-wrapper .logout .material-icons{
 /* Navbar content */
 
 nav .nav-content{
-    display: flex;
-    justify-content: center;
     height: 32px;
 
 }
 
-nav .nav-content .center{
+nav .nav-content .nav-items{
     display: flex;
     align-items: center;
     height: 32px;
 }
 
-nav .nav-content .center div{
+nav .nav-content .nav-items div{
     margin: 0 1em;
 
 }

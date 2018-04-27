@@ -28,5 +28,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/components/navbar.js') }}"></script>
 </body>
 </html>
