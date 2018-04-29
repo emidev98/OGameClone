@@ -12,7 +12,7 @@ class ShipTypesTableSeeder extends Seeder
     public function run()
     {
       DB::table('ship_types')->insert([
-          'name' => 'Cazador ligero',
+          'name' => 'Light Hunter',
           'attack_points' => 65,
           'armor' => 10,
           'capacity' => 50,
@@ -23,7 +23,7 @@ class ShipTypesTableSeeder extends Seeder
           'updated_at' => NOW(),
       ]);
       DB::table('ship_types')->insert([
-          'name' => 'Cazador pesado',
+          'name' => 'Heavy Hunter',
           'attack_points' => 195,
           'armor' => 25,
           'capacity' => 100,
@@ -34,7 +34,7 @@ class ShipTypesTableSeeder extends Seeder
           'updated_at' => NOW(),
       ]);
       DB::table('ship_types')->insert([
-          'name' => 'Crucero',
+          'name' => 'Cruiser',
           'attack_points' => 410,
           'armor' => 40,
           'capacity' => 800,
