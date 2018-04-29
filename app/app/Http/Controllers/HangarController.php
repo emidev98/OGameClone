@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Planet;
-use App\Travel;
+use App\ShipType;
+use App\Fleet;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -17,13 +18,19 @@ class HangarController extends Controller
 
   public function index(Planet $planet)
   {
-      return view('hangar.hangar', ["planet" => $planet]);
+      return view('hangar.hangar', ["planet" => $planet, "shipTypes" => ShipType::all()]);
   }
 
   public function createHangar(Planet $planet)
   {
       $planet->has_hangar = true;
       $planet->save();
-      return view('hangar.hangar', ["planet" => $planet]);
+      return redirect()->route('hangar', $planet);
+  }
+
+  public function createShip(Planet $planet, ShipType $shipType)
+  {
+      $planet->fleet->createOrModifyFleetLine($shipType);
+      return redirect()->route('hangar', $planet);
   }
 }
