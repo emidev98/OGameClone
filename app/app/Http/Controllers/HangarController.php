@@ -19,4 +19,11 @@ class HangarController extends Controller
   {
       return view('hangar.hangar', ["planet" => $planet]);
   }
+
+  public function createHangar(Planet $planet)
+  {
+      $planet->has_hangar = true;
+      $planet->save();
+      return view('hangar.hangar', ["planet" => $planet]);
+  }
 }
