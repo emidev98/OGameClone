@@ -11,19 +11,22 @@
       @endfor
     </select>
   </div>
-  <table>
-      <tr>
-          <th>Name</th>
-          <th>Position</th>
-          <th>User Name</th>
-      </tr>
-      @foreach ($planets as $planet)
+      <div id="table-container" class="data">
+          <table>
+
+              <tr>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>User Name</th>
+              </tr>
+              @foreach ($planets as $planet)
               <tr>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->name}}</a></td>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->position}}</a></td>
                   <td><a href="{{route('planet', $planet)}}">{{$planet->getNotNullUser()->name}}</a></td>
               </tr>
-      @endforeach
-  </table>
+              @endforeach
+          </table>
+      </div>
 </div>
 @endsection

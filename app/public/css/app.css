@@ -71,3 +71,33 @@ body{
         opacity: 0.95;
     }
 }
+
+/* Table */
+
+#table-container.data{
+    height: calc(100% - 4em);
+    overflow-y: auto;
+
+}
+
+#table-container.data table tr:nth-child(even) {
+    background-color: rgba(221, 221, 221, 0.25);
+
+}
+
+#table-container.data table tr td {
+    padding: 0;
+    border-radius: 0;
+
+}
+
+#table-container.data table tr:last-child {
+    border-bottom: 0;
+
+}
+
+#table-container.data table tr td a {
+    display: block;
+    padding: 0.5em;
+
+}

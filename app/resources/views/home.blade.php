@@ -3,7 +3,7 @@
 @section('content')
     <div id="home" class="container card">
         <h4>Select planet to manage...</h4>
-        <div class="data">
+        <div id="table-container" class="data">
             <table>
                 <tr>
                     <th>Name</th>
