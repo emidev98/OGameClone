@@ -54,9 +54,9 @@
             <div class="nav-items">
                 <div><a href="{{route('app')}}">Home</a></div>
                 <div><a href="{{route('galaxy')}}">Galaxy</a></div>
-                <div v-show="$route.path==='/auth/register' ? true : false"><a href="{{route('hangar', $planet)}}">Hangar</a></div>
-                <div v-show="$route.path==='/auth/register' ? true : false"><a href="{{route('fleet', $planet)}}">Fleet</a></div>
-                <div v-show="$route.path==='/auth/register' ? true : false"><a href="{{route('resources', $planet)}}">Resources</a></div>
+                <div><a href="{{route('hangar', $planet)}}">Hangar</a></div>
+                <div><a href="{{route('fleet', $planet)}}">Fleet</a></div>
+                <div><a href="{{route('resources', $planet)}}">Resources</a></div>
             </div>
         </div>
     @endauth
