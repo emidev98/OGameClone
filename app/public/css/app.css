@@ -34,9 +34,9 @@ body{
 }
 
 #app .container.card{
-    overflow-y: auto;
-    height: calc( 100vh - 4em - 64px);
-
+    /* overflow-y: auto;
+    height: calc( 100vh - 4em - 64px); */
+    background-color: rgba(255, 255, 255, .9);
 }
 
 #app.auth .container.card{
