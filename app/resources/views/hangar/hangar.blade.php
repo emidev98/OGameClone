@@ -13,34 +13,29 @@
 
   @else
     <div class="create-ships-section">
-      <p>Now you can create your ships. They will we added automatically to the fleet of the planet, then in Fleet section you can add this ships to your own fleet in order to make travels.</p>
-
-      @foreach ($shipTypes as $shipType)
-        <div class="ships">
-          <h5 class="ship_type">Type: {{$shipType->name}}</h5>
-          <p>HP: {{$shipType->hp}}</p>
-          <p>Armor: {{$shipType->armor}}</p>
-          <p>Attack Points: {{$shipType->attack_points}}</p>
-          <p>Speed: {{$shipType->speed}}</p>
-          <p>Capacity: {{$shipType->capacity}}</p>
-          <p>Construct Time: {{$shipType->construct_time}}</p>
-          <form class="form-horizontal" method="GET" action="{{route('create-ship', [$planet, $shipType])}}">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label for="quantity" class="col-md-4 control-label">E-Mail Address</label>
-
-                <div class="col-md-6">
-                    <input id="quantity" type="quantity" min="1" class="form-control" name="quantity" value="1" required autofocus>
-
-                </div>
-                <button type="submit" class="btn btn-primary light-blue darken-3">
-                    Create Ship
-                </button>
+        <h4>Hangar</h4>
+        <div class="data">
+            @foreach ($shipTypes as $shipType)
+            <div class="ships">
+                <h5>Type: {{$shipType->name}}</h5>
+                <div>HP: {{$shipType->hp}}</div>
+                <div>Armor: {{$shipType->armor}}</div>
+                <div>Attack Points: {{$shipType->attack_points}}</div>
+                <div>Speed: {{$shipType->speed}}</div>
+                <div>Capacity: {{$shipType->capacity}}</div>
+                <div>Construct Time: {{$shipType->construct_time}}</div>
+                <form class="form-horizontal" method="GET" action="{{route('create-ship', [$planet, $shipType])}}">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label for="quantity" class="control-label">Quantity</label>
+                        <input id="quantity" type="quantity" min="1" class="form-control" name="quantity" value="1" required autofocus>
+                        <button type="submit" class="btn btn-primary light-blue darken-3">Create Ship</button>
+                    </div>
+                </form>
             </div>
-          </form>
+            @endforeach
         </div>
-      @endforeach
-
+        <small>*You can create ships, this will we added automatically to the fleet of the planet, then in Fleet section you can add this ships to your own fleet in order to make travels.</small>
     </div>
   @endif
 </div>

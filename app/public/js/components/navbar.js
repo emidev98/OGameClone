@@ -1,5 +1,3 @@
-console.log("location",window.location);
-
 function showExtendedMenuOptions() {
     if(window.location.pathname.indexOf("/planet/") !== -1){
         var fleet  = document.getElementById("nav-fleet");

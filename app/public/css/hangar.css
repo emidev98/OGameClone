@@ -1,52 +1,30 @@
-#create-hangar-section {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto;
-  height: 100%;
-  width: 100%;
-  text-align: center;
+
+
+#hangar .create-ships-section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
 }
 
-#create-hangar-text {
-  grid-row: 1;
-  grid-column: 1/4;
-  align-self: center;
+#hangar .data{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-evenly;
+
 }
 
-#create-hangar-button {
-  grid-row: 2;
-  grid-column: 2;
-  padding: 1em 1em 1em 1em;
-  background-color: #0277bd !important;
-  height: 50px;
-  color: white;
+#hangar .data .ships{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    
 }
 
-#create-hangar-button a {
-  color: white;
-}
+#hangar .data .ships .btn{
+    width: -webkit-fill-available;
+    margin-top: 1em;
 
-#hangar .ships {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto auto auto;
-  border-bottom: 1px solid black;
-  margin: 1em 1em 1em 1em;
-  text-align: center;
-  justify-items: center;
-}
-
-#hangar .ships .ship_type{
-  grid-row: 1;
-  grid-column: 1/4;
-}
-
-#hangar .ships .create_ship_button{
-  grid-row: 4;
-  grid-column: 2;
-  height: 25px;
-  width: 170px;
-  color: white;
-  background-color: #0277bd !important;
-  margin-bottom: 1em;
 }
