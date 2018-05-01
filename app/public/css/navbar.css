@@ -76,3 +76,15 @@ nav .nav-content .nav-items div{
     margin: 0 1em;
 
 }
+
+nav .nav-content .nav-items #nav-fleet,
+nav .nav-content .nav-items #nav-hangar{
+    display: none;
+
+}
+
+nav .nav-content .nav-items #nav-fleet.show,
+nav .nav-content .nav-items #nav-hangar.show{
+    display: block;
+
+}

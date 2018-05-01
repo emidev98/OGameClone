@@ -52,8 +52,10 @@
     @auth
         <div class="nav-content light-blue darken-3">
             <div class="nav-items">
-                <div><a href="{{route('app')}}">Home</a></div>
-                <div><a href="{{route('galaxy')}}">Galaxy</a></div>
+                <div><a id="nav-home"href="{{route('app')}}">Home</a></div>
+                <div><a id="nav-galaxy"href="{{route('galaxy')}}">Galaxy</a></div>
+                <div><a id="nav-fleet"href="{{route('fleet', $planet)}}">Fleet</a></div>
+                <div><a id="nav-hangar"href="{{route('hangar', $planet)}}">Hangar</a></div>
             </div>
         </div>
     @endauth
