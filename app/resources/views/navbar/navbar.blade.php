@@ -7,22 +7,37 @@
             <div class="brand-logo center" id="materials">
                 <div class="metal">
                     <div class="description">
-                        <span class="name">Metal</span>
-                        <span class="status">(No Data)</span>
+                        <span class="name">Metal
+
+                            <small>(lvl{{$planet->metal_mine_lvl}})</small>
+                        </span>
+                        <span class="status">
+                            0/{{$planet->metal_capacity}}
+                        </span>
                     </div>
                     <img src="{{ asset('img/minerals/metal.png') }}">
                 </div>
                 <div class="deuterium">
                     <div class="description">
-                        <span class="name">Deuterium</span>
-                        <span class="status">(No Data)</span>
+                        <span class="name">Deuterium
+
+                            <small>(lvl{{$planet->deuterium_mine_lvl}})</small>
+                        </span>
+                        <span class="status">
+                            0/{{$planet->deuterium_capacity}}
+                        </span>
                     </div>
                     <img src="{{ asset('img/minerals/deuterium.png') }}">
                 </div>
                 <div class="crystal">
                     <div class="description">
-                        <span class="name">Crystal</span>
-                        <span class="status">(No Data)</span>
+                        <span class="name">Crystal
+
+                            <small>(lvl{{$planet->crystal_mine_lvl}})</small>
+                        </span>
+                        <span class="status">
+                            0/{{$planet->crystal_capacity}}
+                        </span>
                     </div>
                     <img src="{{ asset('img/minerals/crystal.png') }}">
                 </div>
