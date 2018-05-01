@@ -4,7 +4,7 @@
             {{ config('app.name', 'UGame') }}
         </a>
         @auth
-            <div class="brand-logo center materials">
+            <div class="brand-logo center" id="materials">
                 <div class="metal">
                     <div class="description">
                         <span class="name">Metal</span>
