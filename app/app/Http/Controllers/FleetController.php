@@ -10,13 +10,13 @@ use Illuminate\Http\Request;
 class FleetController extends Controller
 {
 
-  public function __construct()
-  {
+    public function __construct()
+    {
 
-  }
+    }
 
-  public function index(Planet $planet)
-  {
-      return view('fleet.fleet', ["planet" => $planet]);
-  }
+    public function index(Planet $planet)
+    {
+        return view('fleet.fleet', ["planet" => $planet, "fleetLines" => $planet->fleet->fleetLines]);
+    }
 }

@@ -26,8 +26,6 @@ class Fleet extends Model
       $fleetLines = $this->fleetLines;
       $created = false;
       $quantity = $request->quantity;
-      if ($quantity == 0)
-        $quantity = 1;
       foreach ($fleetLines as $fleetLine) {
         if ($fleetLine->shipType == $shipType){
           $fleetLine->quantity+=$quantity;
