@@ -28,9 +28,9 @@ class HangarController extends Controller
       return redirect()->route('hangar', $planet);
   }
 
-  public function createShip(Planet $planet, ShipType $shipType)
+  public function createShip(Planet $planet, ShipType $shipType, Request $request)
   {
-      $planet->fleet->createOrModifyFleetLine($shipType);
+      $planet->fleet->createOrModifyFleetLine($shipType, $request);
       return redirect()->route('hangar', $planet);
   }
 }

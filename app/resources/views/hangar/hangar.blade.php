@@ -24,7 +24,20 @@
           <p>Speed: {{$shipType->speed}}</p>
           <p>Capacity: {{$shipType->capacity}}</p>
           <p>Construct Time: {{$shipType->construct_time}}</p>
-          <a class="create_ship_button" href="{{route('create-ship', [$planet, $shipType])}}">Create Ship</a>
+          <form class="form-horizontal" method="GET" action="{{route('create-ship', [$planet, $shipType])}}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label for="quantity" class="col-md-4 control-label">E-Mail Address</label>
+
+                <div class="col-md-6">
+                    <input id="quantity" type="quantity" min="1" class="form-control" name="quantity" value="1" required autofocus>
+
+                </div>
+                <button type="submit" class="btn btn-primary light-blue darken-3">
+                    Create Ship
+                </button>
+            </div>
+          </form>
         </div>
       @endforeach
 

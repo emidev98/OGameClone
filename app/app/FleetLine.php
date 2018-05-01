@@ -14,11 +14,11 @@ class FleetLine extends Model
       return $this->belongsTo('App\ShipType');
     }
 
-    public static function createFleetLine($shipTypeId, $fleetId){
+    public static function createFleetLine($shipTypeId, $fleetId, $quantity){
       $fleetLine = new FleetLine();
       $fleetLine->ship_type_id = $shipTypeId;
       $fleetLine->fleet_id = $fleetId;
-      $fleetLine->quantity = 1;
+      $fleetLine->quantity = $quantity;
       $fleetLine->save();
     }
 }
