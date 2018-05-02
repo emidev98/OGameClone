@@ -28,7 +28,7 @@
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="quantity" class="control-label">Quantity</label>
-                        <input id="quantity" type="quantity" min="1" class="form-control" name="quantity" value="1" required autofocus>
+                        <input id="quantity" type="number" min="1" class="form-control" name="quantity" value="1" required autofocus>
                         <button type="submit" class="btn btn-primary light-blue darken-3">Create Ship</button>
                     </div>
                 </form>
