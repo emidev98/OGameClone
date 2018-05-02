@@ -1,0 +1,12 @@
+
+#planet .planet-header .form-group{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+#planet .planet-header #planetName{
+    width: 200px;
+    margin: 0 auto 0 1em;
+}

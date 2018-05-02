@@ -12,3 +12,7 @@
   display: inline;
 
 }
+
+#travels #table-container.data{
+    height: 100%;
+}
