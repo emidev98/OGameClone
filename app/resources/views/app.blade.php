@@ -16,17 +16,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    @guest
-    <div>
-        <div class="app-wallpaper"></div>
-    </div>
-    @endguest
+    <div id="particles-js" class="app-wallpaper"></div>
     <div id="app" class="{{Auth::check() ? 'auth' :''}}">
         @include('navbar.navbar')
         @yield('content')
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/lib/particles.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/components/navbar.js') }}"></script>
 </body>
