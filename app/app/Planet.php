@@ -20,6 +20,14 @@ class Planet extends Model
       return $this->hasOne('App\Fleet');
     }
 
+    public function travelDestinationPlanet() {
+      return $this->hasMany('App\Travel','destination_planet');
+    }
+    
+    public function travelOriginPlanet() {
+      return $this->hasMany('App\Travel','origin_planet');
+    }
+
     public function getNotNullUser(){
       $user = $this->user;
       if ($user == null)

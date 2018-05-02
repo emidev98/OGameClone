@@ -22,6 +22,10 @@ class Fleet extends Model
       return $this->hasMany('App\FleetLine');
   }
 
+  public function travels() {
+      return $this->hasMany('App\Travel');
+  }
+
   public function createOrModifyFleetLine(ShipType $shipType, Request $request){
       $fleetLines = $this->fleetLines;
       $created = false;
