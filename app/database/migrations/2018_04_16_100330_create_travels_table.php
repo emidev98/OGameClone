@@ -19,7 +19,7 @@ class CreateTravelsTable extends Migration
           $table->integer('destination_planet_id')->unsigned();
           $table->dateTime('start_date');
           $table->dateTime('end_date');
-          $table->enum('travel_type', ['attack', 'spy', 'transport', 'colonize', 'deploy']);
+          $table->enum('type', ['attack', 'transport', 'colonize']);
           $table->integer('fleet_id')->unsigned()->nullable();
           $table->foreign('fleet_id')->references('id')->on('fleets')->onDelete('set null');
           $table->foreign('origin_planet_id')->references('id')->on('planets');

@@ -11,10 +11,15 @@
                 <div class="fleet-lines">
                     <p>Ship type: {{$fleetLine->shipType->name}}</p>
                     <p>Quantity: {{$fleetLine->quantity}}</p>
-                    <input id="shipsQuantity" type="number" class="form-control" max="{{$fleetLine->quantity}}" name="{{$fleetLine->shipType->id}}shipsQuantity" value="0" required autofocus>
+                    <input id="shipsQuantity" type="number" class="form-control" max="{{$fleetLine->quantity}}" name="shipsQuantity{{$fleetLine->shipType->id}}" value="0" required autofocus>
                 </div>
             @endforeach
-
+            <p>Travel Type: </p>
+            <select name="travelType">
+                <option value="attack">Attack</option>
+                <option value="colonize">Colonize</option>
+                <option value="transport">Transport</option>
+            </select>
             <button type="submit" class="btn btn-primary light-blue darken-3">Create Travel</button>
         </form>
     @endif

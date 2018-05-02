@@ -1,3 +1,6 @@
+#travel {
+    overflow-y: auto;
+}
 
 #travels .solar_system_selector_container {
   display: grid;
