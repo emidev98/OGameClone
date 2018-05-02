@@ -73,6 +73,11 @@ body{
     }
 }
 
+.app-wallpaper .particles-js-canvas{
+    background-color: rgba(0, 0, 0, 0.35);
+
+}
+
 /* Table */
 
 #table-container.data{
