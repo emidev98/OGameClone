@@ -20,4 +20,10 @@ class PlanetsController extends Controller
   {
     return view('planet.planet',  ["planet" => $planet]);
   }
+
+  public function changeName(Planet $planet, Request $request){
+      $planet->name = $request->planetName;
+      $planet->save();
+      return redirect()->route('planet', $planet);
+  }
 }
