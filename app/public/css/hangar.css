@@ -1,4 +1,17 @@
 
+#hangar #create-hangar-section{
+    display: flex;
+    flex-direction: column;
+    height: -webkit-fill-available;
+    justify-content: space-between;
+
+}
+
+#hangar #create-hangar-section a{
+    width: 250px;
+    align-self: flex-end;
+
+}
 
 #hangar .create-ships-section{
     display: flex;
@@ -20,7 +33,7 @@
     justify-content: center;
     align-items: center;
     max-width: 250px;
-    
+
 }
 
 #hangar .data .ships .btn{
