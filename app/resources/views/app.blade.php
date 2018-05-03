@@ -14,6 +14,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/lib/particles.min.js') }}"></script>
 </head>
 <body>
     @guest
@@ -27,8 +28,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/lib/particles.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/pages/planet.js') }}"></script>
     <script src="{{ asset('js/components/navbar.js') }}"></script>
 </body>
 </html>

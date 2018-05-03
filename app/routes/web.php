@@ -22,6 +22,8 @@ Route::group(['middleware' => ['auth', 'planet_owner']], function () {
   Route::get('/planet/{planet}/hangar-created', 'HangarController@createHangar')->name('create-hangar');
   Route::get('/planet/{planet}/hangar/{shipType}', 'HangarController@createShip')->name('create-ship');
   Route::get('/planet/{planet}/fleet', 'FleetController@index')->name('fleet');
-  Route::get('/planet/{planet}/select-planet', 'TravelsController@selectPlanet')->name("travel-chose-planet");
+  Route::post('/planet/{planet}/select-planet', 'TravelsController@selectPlanet')->name("travel-chose-planet");
+
 });
+Route::post('/planet/{planet}/{oldRequest}', 'TravelsController@makeTravel')->name("make-travel");
 //Route::get('/home/{planet}', 'TravelsController@createTravel')->name('make-travel');
