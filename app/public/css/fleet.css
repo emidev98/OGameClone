@@ -1,7 +1,19 @@
-.fleet-lines {
-    border-bottom: 1px solid black;
+#fleet .no-fleet-found{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+
 }
 
-#fleet select {
-    display: inline;
+#fleet form{
+    display: flex;
+    height: -webkit-fill-available;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#fleet form .btn{
+    width: 250px;
+
 }

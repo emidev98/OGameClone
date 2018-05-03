@@ -3,9 +3,9 @@
 @section('content')
 <div id="fleet" class="container card">
     @if (count($fleetLines) == 0)
-        <p>You don't have ships on this planet!</p>
+        <small class="no-fleet-found">*You don't have ships on this planet!</small>
     @else
-        <form class="form-horizontal" method="POST" action="{{route('travel-chose-planet', $planet)}}">
+        <form method="POST" action="{{route('travel-chose-planet', $planet)}}">
             {{ csrf_field() }}
             @foreach ($fleetLines as $fleetLine)
                 <div class="fleet-lines">
