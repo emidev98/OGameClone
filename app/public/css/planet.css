@@ -1,12 +1,42 @@
 
+#planet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
 #planet .planet-header .form-group{
-    width: 100%;
+
     display: flex;
     align-items: center;
-
+    padding: 0 2em;
 }
 
 #planet .planet-header #planetName{
     width: 200px;
     margin: 0 auto 0 1em;
+}
+
+#planet .info{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em;
+
+}
+
+#planet .fleet-header{
+    border-bottom: 1px solid lightgrey;
+    margin: 2em 1em 3em 1em;
+}
+
+#planet .fleet{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#planet .fleet .fleet-line{
+
 }

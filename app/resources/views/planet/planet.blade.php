@@ -6,19 +6,23 @@
         <div class="form-group">
             <h5>Planet:</h5>
             <input id="planetName" type="text" class="form-control" name="planetName" value="{{$planet->name}}" required autofocus>
-            <button type="submit" class="btn btn-primary light-blue darken-3">Change planet name</button>
+            <button type="submit" class="btn btn-primary light-blue darken-3">
+                <span>Change planet name</span>
+            </button>
         </div>
     </form>
-
-    <p>Solar System: {{$planet->solar_system}}</p>
-    <p>Position: {{$planet->position}}</p>
-    <p>Planet Fleet:
+    <div class="info">
+        <div>Solar System: {{$planet->solar_system}}</div>
+        <div>Position: {{$planet->position}}</div>
+    </div>
+    <h5 class="fleet-header">Planet Fleet</h5>
+    <div class="fleet">
         @foreach ($planet->fleet->fleetLines as $fleetLine)
-            <div class="fleet-lines">
-                <p>Ship type: {{$fleetLine->shipType->name}}</p>
-                <p>Quantity: {{$fleetLine->quantity}}</p>
+            <div class="fleet-line">
+                <div>Ship type: {{$fleetLine->shipType->name}}</div>
+                <div>Quantity: {{$fleetLine->quantity}}</div>
             </div>
         @endforeach
-    </p>
+    </div>
 </div>
 @endsection
