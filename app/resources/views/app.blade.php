@@ -16,7 +16,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="particles-js" class="app-wallpaper"></div>
+    @guest
+    <div>
+        <div id="particles-js" class="app-wallpaper"></div>
+    </div>
+    @endguest
     <div id="app" class="{{Auth::check() ? 'auth' :''}}">
         @include('navbar.navbar')
         @yield('content')
