@@ -11,7 +11,7 @@
                 <div class="fleet-lines">
                     <p>Ship type: {{$fleetLine->shipType->name}}</p>
                     <p>Quantity: {{$fleetLine->quantity}}</p>
-                    <input id="shipsQuantity" type="number" class="form-control" max="{{$fleetLine->quantity}}" name="shipsQuantity{{$fleetLine->shipType->id}}" value="0" required autofocus>
+                    <input id="shipsQuantity" type="number" class="form-control" min="1" max="{{$fleetLine->quantity}}" name="shipsQuantity{{$fleetLine->shipType->id}}" value="0" required autofocus>
                 </div>
             @endforeach
             <button type="submit" class="btn btn-primary light-blue darken-3">Create Travel</button>

@@ -23,7 +23,7 @@ class Planet extends Model
     public function travelDestinationPlanet() {
       return $this->hasMany('App\Travel','destination_planet');
     }
-    
+
     public function travelOriginPlanet() {
       return $this->hasMany('App\Travel','origin_planet');
     }
@@ -58,5 +58,9 @@ class Planet extends Model
       }
       $planetChoosed = $freePlanets[rand(0, $freePlanetsLength-1)];
       return $planetChoosed;
+    }
+
+    public static function findPlanetByPos($pos, $solarSystem){
+        return Planet::where('solar_system', $solarSystem)->where('position', $pos)->first();
     }
 }
