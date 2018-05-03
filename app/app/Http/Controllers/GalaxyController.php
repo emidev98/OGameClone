@@ -19,16 +19,4 @@ class GalaxyController extends Controller
   {
       return view('galaxy.galaxy',  ["planets" => Planet::all(), "maxSolarSystem" => Planet::getLastSolarSystem()]);
   }
-
-  /*public function createTravel(Planet $planet){
-     $travel = new Travel;
-     $travel->origin_planet_id = Auth::user()->planets[0]->id;
-     $travel->destination_planet_id = $planet->id;
-     $travel->start_date = NOW();
-     $travel->end_date = NOW();
-     $travel->travel_type = 'attack';
-     $travel->fleet_id = null;
-     $travel->save();
-     return view('home');
-  }*/
 }

@@ -25,5 +25,3 @@ Route::group(['middleware' => ['auth', 'planet_owner']], function () {
   Route::post('/planet/{planet}/select-planet', 'TravelsController@selectPlanet')->name("travel-chose-planet");
 
 });
-Route::post('/planet/{planet}/{oldRequest}', 'TravelsController@makeTravel')->name("make-travel");
-//Route::get('/home/{planet}', 'TravelsController@createTravel')->name('make-travel');
