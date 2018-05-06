@@ -26,7 +26,7 @@ class AppController extends Controller
     public function index()
     {
         if(Auth::check()){
-            return view('home', ["userPlanets" => Auth::user()->planets]);
+            return view('home', ["userPlanets" => Auth::user()->planets, "notifies" => Auth::user()->notifications]);
 
         }
         return view('guest');

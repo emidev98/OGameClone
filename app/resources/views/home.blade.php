@@ -2,6 +2,14 @@
 
 @section('content')
     <div id="home" class="container card">
+        <h4>Attack Notifications</h4>
+        @if (count($notifies) > 0)
+            @foreach ($notifies as $notify)
+                <p>{{$notify->desc}}</p>
+            @endforeach
+        @else
+            <p>Your planets haven't been attacked</p>
+        @endif
         <h4>Select planet to manage...</h4>
         <div id="table-container" class="data">
             <table>

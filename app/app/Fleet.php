@@ -42,4 +42,24 @@ class Fleet extends Model
       }
 
   }
+
+  public function sum($fleet){
+      $created;
+      foreach ($fleet->fleetLines as $fleetLine) {
+          $created = false;
+          foreach ($this->fleetLines as $thisFleetLines) {
+              if ($thisFleetLines->ship_type_id == $fleetLines->ship_type_id){
+                  $thisFleetLines->quantity += $fleetLines->quantity;
+                  $thisFleetLines->save();
+                  $created = true;
+              }
+          }
+          if (!$created){
+              $newFleetLine = new FleetLine();
+              $newFleetLine->shipType()->associate($fleetLine->shipType);
+              $newFleetLine->fleet()->associate($this);
+              $newFleetLine->quantity = $fleetLine->quantity;
+          }
+      }
+  }
 }

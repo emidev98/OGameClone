@@ -1,11 +1,12 @@
 @extends('app')
 @section('content')
 <div id="travel" class="container card">
-    <form class="form-horizontal" method="POST" action="{{route('travel-chose-planet', $planet)}}">
+    <form class="form-horizontal" method="POST" action="{{route('create-travel', $planet)}}">
+        {{ csrf_field() }}
         @foreach ($planet->fleet->fleetLines as $fleetLine)
             <div class="fleet-lines">
                 <p>Ship type: {{$fleetLine->shipType->name}}</p>
-                <input id="shipsQuantity" type="number" class="form-control" name="shipsQuantity{{$fleetLine->shipType->id}}" value="{{$quantity[$fleetLine->shipType->id - 1]}}" disabled autofocus>
+                <input id="shipsQuantity" type="number" class="form-control" name="shipsQuantity{{$fleetLine->shipType->id}}" value="{{$quantity[$fleetLine->shipType->id - 1]}}" required autofocus>
             </div>
         @endforeach
         <label>Solar System</label>

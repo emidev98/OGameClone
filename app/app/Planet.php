@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Planet extends Model
@@ -23,7 +24,7 @@ class Planet extends Model
     public function travelDestinationPlanet() {
       return $this->hasMany('App\Travel','destination_planet');
     }
-    
+
     public function travelOriginPlanet() {
       return $this->hasMany('App\Travel','origin_planet');
     }
@@ -33,6 +34,22 @@ class Planet extends Model
       if ($user == null)
         $user = new User();
       return $user;
+    }
+
+    public function colonize($fleet){
+        $this->user()->associate(Auth::user());
+        $newFleet = new Fleet();
+        $newFleet->user()->associate(Auth::user());
+        $newFleet->planet()->associate($this);
+        $newFleet->save();
+        foreach ($fleet->fleetLines as $fleetLine) {
+            $newFleetLine = new FleetLine();
+            $newFleetLine->shipType()->associate($fleetLine->shipType);
+            $newFleetLine->fleet()->associate($newFleet);
+            $newFleetLine->quantity = $fleetLine->quantity;
+            $newFleetLine->save();
+        }
+        $this->save();
     }
 
     public static function createNewSolarSystem(int $newSolarSystem){
