@@ -6,6 +6,7 @@
         @if (count($notifies) > 0)
             @foreach ($notifies as $notify)
                 <p>{{$notify->desc}}</p>
+                <a class="delete-notify" href="{{route('delete-notify', [$notify])}}">Delete Notify</a>
             @endforeach
         @else
             <p>Your planets haven't been attacked</p>

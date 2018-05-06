@@ -15,6 +15,7 @@ Route::get('/', 'AppController@index')->name('app');
 
 Auth::routes();
 Route::get('/galaxy', 'GalaxyController@index')->name('galaxy');
+Route::get('/{notify}', 'AppController@deleteNotify')->name('delete-notify');
 Route::group(['middleware' => ['auth', 'planet_owner']], function () {
   Route::get('/planet/{planet}', 'PlanetsController@index')->name('planet');
   Route::get('/planet/{planet}/change', 'PlanetsController@changeName')->name('change-planet-name');
