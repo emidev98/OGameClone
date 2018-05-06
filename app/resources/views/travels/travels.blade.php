@@ -6,7 +6,7 @@
         @foreach ($planet->fleet->fleetLines as $fleetLine)
             <div class="fleet-lines">
                 <p>Ship type: {{$fleetLine->shipType->name}}</p>
-                <input id="shipsQuantity" type="number" class="form-control" name="shipsQuantity{{$fleetLine->shipType->id}}" value="{{$quantity[$fleetLine->shipType->id - 1]}}" required autofocus>
+                <input id="shipsQuantity" type="number" class="form-control" min="1" max="{{$fleetLine->quantity}}" name="shipsQuantity{{$fleetLine->shipType->id}}" value="{{$quantity[$fleetLine->shipType->id - 1]}}" required autofocus>
             </div>
         @endforeach
         <label>Solar System</label>
